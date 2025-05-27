@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #444;
+            background-color: #f0f0f0; /* Light background */
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+            color: #333;
+        }
+        .quote-card {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            font-size: 1.5rem;
+            background-color: #ffffff;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #8eb2d8;
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            font-size: 2rem; /* Size of the icons */
+            color: #007BFF;
+            /* Removed hover effects */
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    <div class="quote-card" id="quote">Click the button to get a random quote!</div>
+    <button onclick="generateQuote()">Get Random Quote</button>
+
+    <div class="social-buttons">
+        <button class="social-button" onclick="shareOnTwitter()">
+            <i class="fab fa-twitter"></i>
+        </button>
+        <button class="social-button" onclick="shareOnFacebook()">
+            <i class="fab fa-facebook-f"></i>
+        </button>
+    </div>
+
+    <script>
+        const quotes = [
+            "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+            "The purpose of our lives is to be happy. - Dalai Lama",
+            "Life is what happens when you're busy making other plans. - John Lennon",
+            "Get busy living or get busy dying. - Stephen King",
+            "You have within you right now, everything you need to deal with whatever the world can throw at you. - Brian Tracy"
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').innerText = quotes[randomIndex];
+        }
+
+        function shareOnTwitter() {
+            const quote = document.getElementById('quote').innerText;
+            const additionalText = "Learning about GenAI with @getpieces by @ialimustufa\nLearned about ...";
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(quote + ' ' + additionalText)}`;
+            window.open(twitterUrl, '_blank');
+        }
+
+        function shareOnFacebook() {
+            const quote = document.getElementById('quote').innerText;
+            const additionalText = "Learning about GenAI with @getpieces by @ialimustufa\nLearned about ...";
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(quote + ' ' + additionalText)}`;
+            window.open(facebookUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
