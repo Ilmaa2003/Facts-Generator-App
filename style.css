@@ -1,0 +1,96 @@
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #444;
+  --card-bg: #ffffff;
+  --border-color: #007BFF;
+  --button-bg: #007BFF;
+  --button-hover: #8eb2d8;
+  --icon-color: #007BFF;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --border-color: #4dabf7;
+  --button-bg: #4dabf7;
+  --button-hover: #74c0fc;
+  --icon-color: #4dabf7;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--icon-color);
+}
+
+.quote-card {
+  margin: 20px 0;
+  padding: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: var(--card-bg);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 2rem;
+  color: var(--icon-color);
+}
