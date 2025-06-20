@@ -1,15 +1,7 @@
-Here’s a **cleanly converted and professional-looking `README.md`** based on your content, formatted for GitHub:
-
----
-
 
 # 🌟 Fact Generator Web App
 
 A lightweight, single-page web application that displays random facts with a **dark mode toggle** and **Twitter sharing** feature.
-
----
-
-## 📸 Screenshots
 
 ![image](https://github.com/user-attachments/assets/a6b96089-36f2-4502-a1d3-a512b2807b95)
 
